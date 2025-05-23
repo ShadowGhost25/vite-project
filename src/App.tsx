@@ -6,12 +6,11 @@ function Calculator() {
 
     const handleClick = (value: any) => {
         if (value === '=') {
-  if (/[0-9]$/.test(input)) {
-    try {
-      setResult(eval(input));
-    } catch {
-      setResult('Error');
-    }}
+            if (/[0-9]$/.test(input)) {
+                setResult(eval(input));
+            } else {
+                setResult('Error');
+            }
         } else if (value === 'C') {
             setInput('');
             setResult(0);
